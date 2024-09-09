@@ -1,0 +1,30 @@
+@AuthenticationPractices_HostAddress = http://localhost:5050/api
+@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWxlbmoweDEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTcyNTg0NzM4NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDUwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDUwIn0.QgZbTOuDrbowghvaNNdLKmTB6d3kmLYbayCAWIw0QaI
+###
+
+### Create a user
+POST {{AuthenticationPractices_HostAddress}}/users/createUser
+Content-Type: application/json
+Authorization: Bearer {{Token}}
+
+{
+"username": "johndoe",
+"password": "examplepassword"
+}
+###
+
+### Get all users
+GET {{AuthenticationPractices_HostAddress}}/users
+Accept: application/json
+Authorization: Bearer {{Token}}
+###
+
+### Login
+POST {{AuthenticationPractices_HostAddress}}/auth/login
+Content-Type: application/json
+
+{
+"username": "alenj0x1",
+"password": "pass"
+}
+###
